@@ -3,41 +3,44 @@
 
     <br>
     <div class="form-wrapper">
-        <h1>Iniciar sesión</h1>
+        <mat-icon class="account-icon">account_circle</mat-icon>
+        <div class="mat-headline">Iniciar sesión</div>
         <form [formGroup]='signInForm' (ngSubmit)="signIn(signInForm)">
             <div class="form-elements-wrapper">
-                <mat-form-field appearance="outline">
+                <mat-form-field appearance="outline" hideRequiredMarker>
                     <mat-label>Correo electrónico</mat-label>
                     <input matInput type="email" name="email" formControlName="email" required>
+                    <mat-icon matSuffix>email</mat-icon>
                 </mat-form-field>
-                <mat-form-field appearance="outline">
+                <mat-form-field appearance="outline" hideRequiredMarker>
                     <mat-label>Contraseña</mat-label>
-                    <input matInput type="password" name="password" formControlName="password" required>
+                    <input matInput [type]="hide ? 'password' : 'text'" name="password" formControlName="password"
+                        required>
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
                 </mat-form-field>
-                <button mat-flat-button color='primary'>Sign In</button>
-            </div>
+                <br>
+                <button id="login-button" mat-flat-button color='primary'>Iniciar sesión</button>
 
+            </div>
         </form>
+        <br>
+        <div class="mat-caption">ó</div>
+        <br>
+        <button id="google-login-button" mat-flat-button color='accent' (click)="login()">Iniciar sesión con
+            Google</button>
+
+        <hr>
+        <br>
 
         <h4 *ngIf="signInFailed" style="color: #f00;">Algo ha ido mal. Por favor, inténtelo de nuevo.</h4>
+
     </div>
 
-    <br>
-    <hr>
-    <br>
 
 
 
 
-    <button mat-flat-button color='accent' (click)="login()">Iniciar sesión con Google</button>
-
-
-
-    <br>
-    <hr>
-    <br>
-
-
-
-    <button mat-flat-button (click)="signOut()" color='warn'>Sign Out</button>
 </div>

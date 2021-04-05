@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
+import { NgZone } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 
@@ -14,8 +15,9 @@ export class SignInComponent implements OnInit {
   public signInForm: FormGroup;
   public signInFailed: boolean;
   public userAuth: Subscription;
+  hide = true;
 
-  constructor(public authService: AuthService, public fb: FormBuilder, public router: Router) {
+  constructor(public authService: AuthService, public fb: FormBuilder, public router: Router, public ngZone: NgZone) {
     this.signInFailed = false;
     this.signInForm = this.fb.group({
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -41,9 +43,11 @@ export class SignInComponent implements OnInit {
       if (!fg.valid) throw new Error('Invalid sign-in credentials');
       const result = await this.authService.signIn(fg.value.email, fg.value.password);
       console.log('User Signed IN', result);
-      // if (result) this.router.navigate(['dashboard']);
-      // else throw new Error('Sign-in failed')
+      // this.ngZone.run(()=>this.navigateTo('/')); ---- this.router.navigate(['home']);
+      if (result) this.ngZone.run(() => this.router.navigate(['home']))
+      else throw new Error('Sign-in failed');
     } catch (error) {
+      // TO DO Incluir alert aquí 
       console.log(error);
       this.signInFailed = true;
     }
@@ -52,8 +56,9 @@ export class SignInComponent implements OnInit {
   async login() {
     try {
       this.signInFailed = false;
-      const res = await this.authService.GoogleAuth();
-      console.log('User signed in with Google:', res);
+      const result = await this.authService.GoogleAuth();
+      if (result) this.ngZone.run(() => this.router.navigate(['home']))
+      console.log('User signed in with Google:', result);
     } catch (error) {
       console.log(error)
       this.signInFailed = true;

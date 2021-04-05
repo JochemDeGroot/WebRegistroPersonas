@@ -13,12 +13,14 @@ import { MaterialModule } from './material/material.module';
 
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { NavbarComponent } from './components/layout/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignInComponent,
-    DashboardComponent
+    DashboardComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
