@@ -1,0 +1,43 @@
+<div class="sign-in-wrapper">
+    <br>
+
+    <br>
+    <div class="form-wrapper">
+        <h1>Iniciar sesión</h1>
+        <form [formGroup]='signInForm' (ngSubmit)="signIn(signInForm)">
+            <div class="form-elements-wrapper">
+                <mat-form-field appearance="outline">
+                    <mat-label>Correo electrónico</mat-label>
+                    <input matInput type="email" name="email" formControlName="email" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput type="password" name="password" formControlName="password" required>
+                </mat-form-field>
+                <button mat-flat-button color='primary'>Sign In</button>
+            </div>
+
+        </form>
+
+        <h4 *ngIf="signInFailed" style="color: #f00;">Algo ha ido mal. Por favor, inténtelo de nuevo.</h4>
+    </div>
+
+    <br>
+    <hr>
+    <br>
+
+
+
+
+    <button mat-flat-button color='accent' (click)="login()">Iniciar sesión con Google</button>
+
+
+
+    <br>
+    <hr>
+    <br>
+
+
+
+    <button mat-flat-button (click)="signOut()" color='warn'>Sign Out</button>
+</div>

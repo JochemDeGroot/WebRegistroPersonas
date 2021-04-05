@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "testpage-fef72": {
+      "hosting": {
+        "angular-webregistro": [
+          "testpage-fef72"
+        ]
+      }
+    }
+  }
+}
