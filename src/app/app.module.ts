@@ -14,13 +14,15 @@ import { MaterialModule } from './material/material.module';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavbarComponent } from './components/layout/navbar/navbar.component';
+import { AccountComponent } from './components/account/account.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignInComponent,
     DashboardComponent,
-    NavbarComponent
+    NavbarComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,
