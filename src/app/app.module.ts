@@ -19,6 +19,8 @@ import { SidenavComponent } from './components/layout/sidenav/sidenav.component'
 import { AddPanelComponent } from './components/dynamic/add-panel/add-panel.component';
 import { ViewPanelComponent } from './components/dynamic/view-panel/view-panel.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +37,7 @@ import { ViewPanelComponent } from './components/dynamic/view-panel/view-panel.c
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase)

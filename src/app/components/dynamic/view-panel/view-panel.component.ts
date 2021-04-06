@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DbService } from '../../../services/db.service';
+import { User } from '../../../models/User';
 
 @Component({
   selector: 'app-view-panel',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewPanelComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit(): void {
+  users: User[];
+
+  constructor(private todoService: DbService) { }
+
+  ngOnInit() {
+
+    this.todoService.getUsers().subscribe(users => {
+      this.users = users;
+    });
   }
+
 
 }
