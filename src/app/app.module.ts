@@ -15,6 +15,9 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavbarComponent } from './components/layout/navbar/navbar.component';
 import { AccountComponent } from './components/account/account.component';
+import { SidenavComponent } from './components/layout/sidenav/sidenav.component';
+import { AddPanelComponent } from './components/dynamic/add-panel/add-panel.component';
+import { ViewPanelComponent } from './components/dynamic/view-panel/view-panel.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { AccountComponent } from './components/account/account.component';
     SignInComponent,
     DashboardComponent,
     NavbarComponent,
-    AccountComponent
+    AccountComponent,
+    SidenavComponent,
+    AddPanelComponent,
+    ViewPanelComponent
   ],
   imports: [
     BrowserModule,

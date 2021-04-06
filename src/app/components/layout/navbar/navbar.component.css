@@ -5,3 +5,7 @@
 span {
     padding-right: 1rem;
 }
+
+.vl {
+    border-left: 4px solid whitesmoke;
+  }

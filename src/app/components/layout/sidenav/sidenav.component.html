@@ -1,0 +1,30 @@
+<mat-sidenav-container>
+    <!-- mat-sidenav can have different modes: over, push, side-->
+    <mat-sidenav #sidenav (opened)="log('opened')" (closed)="log('closed')" mode="push" [(opened)]='opened'>
+        <button mat-button (click)="showAdd()">
+            <span>Añadir registro</span>
+        </button>
+        <button mat-button (click)="showView()">
+            <span>Ver registros</span>
+        </button>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <button mat-flat-button (click)="opened=!opened">
+            <mat-icon>launch</mat-icon>
+            <span> Menu</span>
+        </button>
+        <hr>
+        <br>
+        <br>
+        <div *ngIf="addPanelActive">
+            <app-add-panel></app-add-panel>
+        </div>
+        <div *ngIf="viewPanelActive">
+            <app-view-panel></app-view-panel>
+        </div>
+        <div *ngIf="!addPanelActive && !viewPanelActive">
+            <p>Damn, looks like nothing's really working huh.</p>
+        </div>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>
