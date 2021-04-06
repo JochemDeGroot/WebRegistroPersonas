@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidenavComponent implements OnInit {
   opened = false;
-  addPanelActive = false;
+  addPanelActive = true;
   viewPanelActive = false;
 
   constructor() { }

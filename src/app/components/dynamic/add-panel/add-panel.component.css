@@ -1,0 +1,6 @@
+.form-elements-wrapper{
+    padding-left: 10vw;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
