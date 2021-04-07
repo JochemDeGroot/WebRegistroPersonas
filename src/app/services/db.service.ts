@@ -17,7 +17,7 @@ const httpOptions = {
 })
 export class DbService {
 
-  apiUrl: string = 'http://127.0.0.1:8000/api/'
+  apiUrl: string = 'https://api-ocrgvlp62q-ez.a.run.app/api/';
 
   constructor(private http: HttpClient) { }
 
