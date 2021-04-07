@@ -31,8 +31,6 @@ export class SidenavComponent implements OnInit {
     this.opened = false;
   }
 
-  log(state: any) {
-    console.log(state);
-  }
+
 
 }

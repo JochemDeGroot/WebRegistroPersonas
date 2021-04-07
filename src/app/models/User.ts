@@ -1,6 +1,7 @@
 export class User {
-    id: string;
-    name: string;
-    email: string;
-    phone: number;
+    Empresa: string;
+    Timestamp: string;
+    DNI: string;
+    Correo_electrónico: string;
+    Nombre_y_apellidos: string;
 }

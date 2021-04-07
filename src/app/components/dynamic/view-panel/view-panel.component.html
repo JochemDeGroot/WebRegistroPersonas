@@ -8,6 +8,8 @@
 <div>
     <h2>Users Collection</h2>
     <div *ngFor="let user of users">
-        {{ user.name }}
+        <span>{{ user.Nombre_y_apellidos }} </span>
+        <span> --- </span>
+        <span> {{ user['Correo_electrónico'] }}</span>
     </div>
 </div>

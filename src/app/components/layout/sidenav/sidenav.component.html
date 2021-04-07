@@ -1,6 +1,6 @@
 <mat-sidenav-container>
     <!-- mat-sidenav can have different modes: over, push, side-->
-    <mat-sidenav #sidenav (opened)="log('opened')" (closed)="log('closed')" mode="side" [(opened)]='opened'>
+    <mat-sidenav #sidenav mode="side" [(opened)]='opened'>
         <button mat-button (click)="showAdd()">
             <span>Añadir registro</span>
         </button>
